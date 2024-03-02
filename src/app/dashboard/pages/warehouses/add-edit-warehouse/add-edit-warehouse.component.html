@@ -1,0 +1,25 @@
+
+<!-- Crea la estructura HTML del formulario -->
+<div class="container d-flex justify-content-center">
+
+
+  <div class="col-md-6">
+    <form [formGroup]="form" (ngSubmit)="addWarehouse()">
+      <div class="justify-content-center text-center mb-4">
+
+        <h2 >{{ operation }} Bodega </h2>
+      </div>
+      <div class="form-group mb-2">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+      </div>
+      <div class="form-group mb-2">
+        <label for="date">Fecha</label>
+        <input type="datetime-local" id="date" class="form-control" formControlName="date">
+      </div>
+
+      <button type="submit" class="btn btn-primary ">{{ operation }} Bodega</button>
+    </form>
+  </div>
+</div>
+

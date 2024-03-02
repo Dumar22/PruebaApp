@@ -1,0 +1,54 @@
+<!-- Crea la estructura HTML del formulario -->
+<div class="container d-flex justify-content-center">
+
+  <div class="col-md-6">
+    <form [formGroup]="form" (ngSubmit)="addCollaborator()">
+      <div class="justify-content-center text-center mb-4">
+
+        <h2 >{{ operation }} Movil </h2>
+      </div>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="code">Código</label>
+        <input type="text" id="code" class="form-control" formControlName="code">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Operación</label>
+        <select class="form-select"  aria-label="Default select example" formControlName="operation" >
+          <option selected>--Seleccione--</option>
+          <option *ngFor="let type of colaboratorOperation">{{ type.value }}</option>
+        </select>
+      </div>
+      <div class="form-group ">
+        <label for="document">Documento</label>
+        <input type="text" id="document" class="form-control" formControlName="document">
+      </div>
+      <div class="form-group">
+        <label for="phone">Teléfono</label>
+        <input type="text" id="phone" class="form-control" formControlName="phone">
+      </div>
+      <div class="form-group">
+        <label for="mail">Correo</label>
+        <input type="email" id="mail" class="form-control" formControlName="mail">
+      </div>
+      
+      <div class="form-group mb-2">
+        <label for="name">Estado: </label> <br>
+        <div class="form-check form-check-inline mb-2">
+          <input mdbInput type="radio" formControlName="status" id="activo" [value]="true">
+          <label class="form-check-label" for="activo">Activo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input mdbInput type="radio" formControlName="status" id="inactivo" [value]="false">
+          <label class="form-check-label" for="inactivo">No Activo</label>
+        </div>
+      </div>
+      
+
+      <button type="submit" class="btn btn-primary ">{{ operation }} Movil</button>
+    </form>
+  </div>
+</div>

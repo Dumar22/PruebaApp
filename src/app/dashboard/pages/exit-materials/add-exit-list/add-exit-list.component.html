@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <h3 class="text-center mb-5">Agregar nueva salida</h3>
+  
+    <form class="row" (ngSubmit)="addExit()" autocomplete="off" [formGroup]="formExit">
+      <div class="col-md-4 mb-3">
+        <label class="form-label">Nombre de lista</label>
+        <input type="text" class="form-control" formControlName="nameList" />
+      </div>
+      
+      
+
+      <hr />
+      <details-exit-list
+      [materials]="materials"
+      (materialsChange)="onMaterialsChange($event)"
+    ></details-exit-list>
+
+    <hr />
+
+      
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Guardar lista</button>
+      </div>
+  
+    </form>
+  
+  </div>
+  
+  
+  

@@ -1,0 +1,54 @@
+<div class="container my-4" *ngIf="transfer">
+    <div class="card shadow-sm">
+      <div class="card-body" >
+        <h2 class="card-title mb-4">Detalles de la entrada {{ transfer.transferNumber }}</h2>
+        <div class="space">
+          <p><strong>Fecha:</strong> {{ transfer.date }}</p>
+          <p><strong>Autoriza:</strong> {{ transfer.autorization }}</p>
+        </div>
+        <div class="space">
+          <p ><strong>Origen:</strong> {{ transfer.origin }}</p>
+          <p ><strong>Destino:</strong> {{ transfer.destination }}</p>
+      </div>
+      <div class="space">
+        <p><strong>Envía:</strong> {{ transfer.delivery }}</p>
+        <p><strong>Recibe:</strong> {{ transfer.receive }}</p>
+      </div>
+      <div>
+        <p><strong>Observaciones:</strong> {{ transfer.observation }}</p>
+      </div>
+        
+        <h4>Lista de materiales para traslado</h4>
+        <hr>
+        
+        <table class="table table-bordered table-striped mt-4">
+          <thead class="bg-light">
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Código</th>
+              <th scope="col">Unidad</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Valor unitario</th>
+              <th scope="col">Serial</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>         
+          <tbody>
+            <tr *ngFor="let material of transfer.details">
+              <td>{{ material.name }}</td>
+              <td>{{ material.code }}</td>
+              <td>{{ material.unity }}</td>
+              <td>{{ material.quantity }}</td>
+              <td>{{ material.price |  currency:'$' }}</td>
+              <td>{{ material.serial }}</td>
+              <td>{{ material.total |  currency:'$'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary mr-2" (click)="editTransfer(transfer)">Editar</button>
+        <button type="button" class="btn btn-secondary" (click)="prev()">Volver</button>
+      </div>
+    </div>
+  </div>

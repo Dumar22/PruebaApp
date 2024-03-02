@@ -1,0 +1,44 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+      <img
+        src="../../../../assets/Cafe_redes.png"
+        height="80"
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    
+
+    <p>Usuario: <br> <small>{{ username | uppercase }}</small></p>
+    <!-- Collapsible wrapper -->
+
+    <p > Fecha actual: <br>  <small>{{ currentTime | date: 'dd/MM/yyyy' }}</small></p>
+    <p >  Hora: <br> <small>{{ currentTime | date: 'HH:mm:ss' }}</small></p>
+
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarButtonsExample">
+      <!-- Left links -->
+      
+
+      <div class="d-flex align-items-end">
+        <button type="button"
+         class="btn btn-primary bg-danger  float-end"
+         (click)="singOut()" >
+          Cerrar sesión
+          <i class=" mx-2 fas fa-right-from-bracket"></i>
+        </button>
+
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

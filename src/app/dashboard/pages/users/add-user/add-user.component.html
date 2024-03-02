@@ -1,0 +1,56 @@
+<div class="d-flex col-sm-12 col-md-8 col-lg-8 my-3 mx-auto rounded row-cols-2 m-auto justify-content-center text-center">
+  <div class="col rounded m-1 text-blue text-center d-none d-md-block">
+    <img src="../assets/Rgister2.jpg" class="w-100">
+  </div>
+
+  <div class="col-sm-12 col-md-12 col-lg-12 w-75 mt-5 rounded justify-content-center">
+    <h2 class="my-4">{{operation}} Usuario</h2>
+    <form autocomplete="off"
+    [formGroup]="userForm"
+    (ngSubmit)="onSubmit()"  >
+      <!-- Name input -->
+      <mdb-form-control class="mb-4">
+        <input mdbInput type="text"  class="form-control"  formControlName="fullName"
+      placeholder="*"  />
+        <label mdbLabel class="form-label" for="form1Example1">Nombres y Apellidos</label>
+      </mdb-form-control>
+
+      <!-- UserName input -->
+      <mdb-form-control class="mb-4">
+        <input mdbInput type="text" class="form-control" formControlName="user"
+        placeholder="*"  required/>
+        <label mdbLabel class="form-label" for="form1Example1">Usuario</label>
+        
+      </mdb-form-control>
+      <!-- Rol input -->
+      
+  <select class="form-select mb-2" aria-label="Default select example" formControlName="rol" >
+    <option value="" disabled selected>Seleccione un rol</option>
+    <option value="user">User</option>
+    <option value="admin">admin</option>
+    <option value="super-user">SuperUser</option>
+    <!-- Add other roles as needed -->
+  </select>
+
+      <!-- Warehouse -->      
+      <select class="form-select mb-2" formControlName="warehouseIds" >
+        <option value="" disabled selected>Seleccione una bodega</option>
+        <option *ngFor="let warehouse of warehouses" [value]="warehouse.id">{{ warehouse.name }}</option>
+        <!-- Add other warehouse options as needed -->
+      </select>
+
+<!-- Password input -->
+<mdb-form-control class="mb-4">
+  <input mdbInput type="password" class="form-control" formControlName="password"
+  placeholder="*"  required/>
+  <label mdbLabel class="form-label" for="form1Example1">Contraseña</label>
+  
+</mdb-form-control>
+      <!-- Submit button -->
+      <input type="submit"
+      value="Enviar"
+      class="btn btn-primary btn-block" />
+    </form>
+  </div>
+</div>
+
